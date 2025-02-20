@@ -11,5 +11,29 @@ Checklists:
 - [x] store the shopping lists and items to the database
 - [x] modify the database such that a price field can be stored for each item
   ![image](./product.png)
-- [ ] multiply the quantity of each item in the shopping lists by two
-- [ ] create API endpoints to dynamically get a list of shopping lists and items
+- [x] multiply the quantity of each item in the shopping lists by two
+- [x] create API endpoints to dynamically get a list of shopping lists and items
+  - [x] create endpoint /list/:userId
+  ```
+  const usersWithProducts = await User.findAll({
+    where: {
+      id: userId,
+    },
+    include: {
+      model: Product,
+    },
+  });
+  ...
+  const formattedResult = usersWithProducts.map(user => ({
+    id: user.id,
+    name: user.name,
+    description: user.name + `'s shopping list`,
+    email: user.email,
+    items: user.Products.map(product => ({
+      id: product.id,
+      name: product.name,
+      quantity: product.UserProducts.quantityOwned,
+      price: product.price,
+    })),
+  }));
+  ```
