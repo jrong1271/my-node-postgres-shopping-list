@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 const sequelize = require("../config/database");
 
-const User = sequelize.define("User", {
+const Product = sequelize.define("Product", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,
@@ -11,11 +11,20 @@ const User = sequelize.define("User", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  email: {
+  unit: {
     type: DataTypes.STRING,
-    unique: true,
+    allowNull: true,
+  },
+  quantity: {
+    type: DataTypes.INTEGER,
     allowNull: false,
+    defaultValue: 1,
+  },
+  price: {
+    type: DataTypes.FLOAT,
+    allowNull: false,
+    defaultValue: 0.0,
   },
 });
 
-module.exports = User;
+module.exports = Product;

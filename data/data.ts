@@ -124,6 +124,7 @@ export const arnoldBumsteadShoppingList = [
   {
     name: 'Multi-vitamins',
     unit: null,
-    quantity: 1
+    quantity: 1,
+    price: 1.99
   }
 ]
