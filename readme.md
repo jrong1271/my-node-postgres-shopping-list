@@ -1,3 +1,6 @@
+This project has been declared as no-longer-needed, I can pretty much everything via this graphQL endpoint, in a much cleaner fashion.
+https://github.com/jrong1271/graphql-microservices
+
 Create a model(s) (data structure) for shopping list
 use sequelize nodejs ORM to interact with postgreSQL database
 
